@@ -1,0 +1,46 @@
+<template>
+
+  <div class="alert alert-danger" if.bind="error">
+    ${error}
+  </div>
+
+  <table class="table table-hover" if.bind="!error">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Content</th>
+        <th scope="col">Deadline</th>
+        <th scope="col">Done</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">
+          <input type="text" class="form-control" placeholder="id" aria-label="Content"
+                        aria-describedby="basic-addon2" value=${todo.id}>
+        </th>
+        <td>
+          <!-- <p>${todo.content}</p> -->
+          <input type="text" class="form-control" placeholder="Content ..." aria-label="Content"
+                        aria-describedby="basic-addon2" value=${todo.content}>
+        </td>
+        <td>
+          <!-- <p>${todo.deadline}</p> -->
+          <input type="text" class="form-control" placeholder="Deadline ..." aria-label="Content"
+                        aria-describedby="basic-addon2" value=${todo.deadline}>
+        </td>
+        <td>
+          <!-- <p>${todo.done}</p> -->
+          <input type="text" class="form-control" placeholder="Done ..." aria-label="Content"
+                        aria-describedby="basic-addon2" value=${todo.done}>
+        </td>
+        <td>
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-secondary">Apply</button> 
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</template>
