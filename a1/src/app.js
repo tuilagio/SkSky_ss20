@@ -1,7 +1,8 @@
+// This is where the App class got defined.
 
 export class App {
   constructor() {
-    this.message = 'Hello world';
+    // this.message = 'Hello world';
   }
 
   configureRouter(config, router) {

@@ -3,16 +3,18 @@
   <require from="./assets/style/main.css"></require>
 
   <!-- TOP MENU -->
+  <!-- Static part, displayed on every page -->
   <div class="blog-masthead">
     <div class="container">
       <nav class="blog-nav">
         <a class="blog-nav-item active" route-href="route: home">Home</a>
         <a class="blog-nav-item" route-href="route: add-todo">Add</a>
-        <!-- <a class="blog-nav-item" route-href="route: edit-todo; params.bind: {slug: todo.id}">Edit-temp</a> -->
         <a class="blog-nav-item" route-href="route: impressum">Impressum</a>
       </nav>
     </div>
   </div>
+
   <!-- TODOs -->
+  <!-- This router-view template placeholder will be dynamic, modified by route -->
   <router-view></router-view>
 </template>
