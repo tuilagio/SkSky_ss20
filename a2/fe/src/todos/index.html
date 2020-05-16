@@ -13,7 +13,7 @@
       </tr>
     </thead>
     <tbody repeat.for="todo of todos">
-      <tr>
+      <tr id=${todo.id}>
         <th scope="row">${todo.id}</th>
         <td>
           <p>${todo.content}</p>
@@ -28,7 +28,7 @@
           <div class="btn-group" role="group" aria-label="Basic example">
             <!-- <button type="button" class="btn btn-secondary">Edit</button> -->
             <a route-href="route: edit-todo; params.bind: {slug: todo.id}" class="btn btn-primary">Edit</a>
-            <button type="button" class="btn btn-secondary">Delete</button> 
+            <button type="button" class="btn btn-secondary" click.delegate='delete_todo(todo.id)'>Delete</button> 
           </div>
         </td>
       </tr>

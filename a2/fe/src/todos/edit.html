@@ -18,26 +18,26 @@
       <tr>
         <th scope="row">
           <input type="text" class="form-control" placeholder="id" aria-label="Content"
-                        aria-describedby="basic-addon2" value=${todo.id}>
+                        aria-describedby="basic-addon2" value=${todo.id} value.bind="id" readonly>
         </th>
         <td>
           <!-- <p>${todo.content}</p> -->
           <input type="text" class="form-control" placeholder="Content ..." aria-label="Content"
-                        aria-describedby="basic-addon2" value=${todo.content}>
+                        aria-describedby="basic-addon2" value=${todo.content} value.bind="content">
         </td>
         <td>
           <!-- <p>${todo.deadline}</p> -->
           <input type="text" class="form-control" placeholder="Deadline ..." aria-label="Content"
-                        aria-describedby="basic-addon2" value=${todo.deadline}>
+                        aria-describedby="basic-addon2" value=${todo.deadline} value.bind="deadline">
         </td>
         <td>
           <!-- <p>${todo.done}</p> -->
           <input type="text" class="form-control" placeholder="Done ..." aria-label="Content"
-                        aria-describedby="basic-addon2" value=${todo.done}>
+                        aria-describedby="basic-addon2" value=${todo.done} value.bind="done">
         </td>
         <td>
           <div class="btn-group" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-secondary">Apply</button> 
+            <button type="button" class="btn btn-secondary" click.delegate='put_todo()'>Apply</button> 
           </div>
         </td>
       </tr>

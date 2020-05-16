@@ -22,7 +22,7 @@ class Todo(models.Model):
 
     deadline = models.CharField(max_length=30)
     content = models.CharField(max_length=100)
-    done_status = models.CharField(max_length=10)
+    done = models.CharField(max_length=10)
 
     # class Meta:
     #     ordering = ['created']

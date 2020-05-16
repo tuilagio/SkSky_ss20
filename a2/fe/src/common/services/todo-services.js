@@ -38,7 +38,14 @@ export class TodoService {
 		  setTimeout(() => {
 			// simulate backend
 		  	if (this.todos) {
-			  	resolve({ todos: this.todos });
+				  // resolve({ todos: this.todos });
+				const url = 'http://127.0.0.1:8000/todos/';
+				fetch(url)
+				.then(response => response.json())
+				.then(data => {
+					// console.log(data);
+					resolve({ todos: data });
+				});
 		  	} else {
 		  		reject(new Error('There was an error retrieving the todos.'));
 		  	}
@@ -48,15 +55,25 @@ export class TodoService {
 
 	find(id) {
 		return new Promise((resolve, reject) => {
-		  setTimeout(() => {
-		  	let todo = this.todos.find(post => post.id.toLowerCase() === id.toLowerCase());
-		  	if (todo) {
-			  	resolve({ todo });
-		  	} else {
-				reject(new Error('Todo not found.'));
-		  	}
-		  }, this.delay);
-		});	
+			setTimeout(() => {
+				// let todo = this.todos.find(post => post.id.toLowerCase() === id.toLowerCase());
+				// if (todo) {
+				// 	console.log(todo)
+				//   	resolve({ todo });
+				// } else {
+				// 	reject(new Error('Todo not found.'));
+				// }
+
+				const url = `http://127.0.0.1:8000/todos/${id}/`;
+				console.log(url)
+				fetch(url)
+					.then(response => response.json())
+					.then(data => {
+						// console.log(data);
+						resolve({ todo: data });
+					});
+			}, this.delay);
+		});
 	}
 	/*
 	allPostPreviews() {

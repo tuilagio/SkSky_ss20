@@ -22,7 +22,9 @@ class TodoSerializer(serializers.Serializer):
     # style = serializers.ChoiceField(choices=STYLE_CHOICES, default='friendly')
     deadline = serializers.CharField(max_length=30, allow_blank=False)
     content = serializers.CharField(allow_blank=False, max_length=1000)
-    done_status = serializers.CharField(max_length=10, allow_blank=False)
+    done = serializers.CharField(max_length=10, allow_blank=False)
+    id = serializers.IntegerField(required=False, source='pk') 
+
     def create(self, validated_data):
         """
         Create and return a new `Snippet` instance, given the validated data.
@@ -35,6 +37,6 @@ class TodoSerializer(serializers.Serializer):
         """
         instance.deadline = validated_data.get('deadline', instance.deadline)
         instance.content = validated_data.get('content', instance.content)
-        instance.done_status = validated_data.get('done_status', instance.done_status)
+        instance.done = validated_data.get('done', instance.done)
         instance.save()
         return instance

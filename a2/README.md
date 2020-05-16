@@ -6,6 +6,7 @@ env\Scripts\activate
 
 python -m pip install django
 python -m  pip install djangorestframework
+python -m pip install django-cors-headers
 
 django-admin startproject a2_be
 cd a2_be
@@ -32,9 +33,13 @@ from a2.serializers import TodoSerializer
 from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
 
-todo = Todo(content='todo 1', deadline='22/22/2012', done_status='0%')
-todo.save()
+# todo = Todo(content='todo 1', deadline='22/22/2012', done='0%')
+# todo.save()
 
-todo = Todo(content='todo 2', deadline='22/22/1900', done_status='100%')
-todo.save()
+# todo = Todo(content='todo 2', deadline='22/22/1900', done='100%')
+# todo.save()
+
+for i in range(1, 100):
+    todo = Todo(content=f'todo {i}', deadline=f'{i}/{i}/20{i}', done='0%')
+    todo.save()
 ```
