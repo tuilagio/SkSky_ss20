@@ -1,0 +1,41 @@
+<template>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Content</th>
+        <th scope="col">Deadline</th>
+        <th scope="col">Done</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">
+          <input type="text" class="form-control" placeholder="id ..." aria-label="Content"
+                        aria-describedby="basic-addon2" value=''>
+        </th>
+        <td>
+          <!-- <p>${todo.content}</p> -->
+          <input type="text" class="form-control" placeholder="Content ..." aria-label="Content"
+                        aria-describedby="basic-addon2" value=''>
+        </td>
+        <td>
+          <!-- <p>${todo.deadline}</p> -->
+          <input type="text" class="form-control" placeholder="Deadline ..." aria-label="Content"
+                        aria-describedby="basic-addon2" value=''>
+        </td>
+        <td>
+          <!-- <p>${todo.done}</p> -->
+          <input type="text" class="form-control" placeholder="Done ..." aria-label="Content"
+                        aria-describedby="basic-addon2" value=''>
+        </td>
+        <td>
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-secondary">Add</button> 
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</template>
